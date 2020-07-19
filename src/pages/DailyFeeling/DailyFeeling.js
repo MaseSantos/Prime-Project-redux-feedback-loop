@@ -4,7 +4,7 @@ class DailyFeeling extends Component {
     render() {
         return (
             <>
-
+                <h4>How are you feeling today?</h4>
             </>
         );
     }
