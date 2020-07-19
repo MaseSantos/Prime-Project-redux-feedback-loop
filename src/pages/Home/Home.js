@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-// import FeelingButton from "../FeelingButton/FeelingButton";
+import FeelingButton from "../../components/buttons/FeelingButton/FeelingButton";
 
 class Home extends Component {
   render() {
     return (
       <div>
         <p>Fill out your feedback for the day!</p>
-        {/* <FeelingButton /> */}
+        <FeelingButton />
       </div>
     );
   }
