@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import UnderstandingButton from "../../components/buttons/CommentsButton/CommentsButton";
 import CommentsButton from '../../components/buttons/CommentsButton/CommentsButton';
-
+import SelectTag from "../../components/SelectTag/SelectTag";
 
 class DailySupport extends Component {
     render() {
         return (
-            <>
-                <h4>How well are you being supported?</h4>
-                <CommentsButton/>
-            </>
+          <>
+            <h4>How well are you being supported?</h4>
+            <SelectTag />
+            <CommentsButton />
+          </>
         );
     }
 }
