@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import CommentsButton from '../../components/buttons/CommentsButton/CommentsButton';
 
 class DailySupport extends Component {
@@ -7,9 +8,19 @@ class DailySupport extends Component {
     support: ""
   }
 
-  submitResponse = (event, propertyName) => {
-    this.props.dispatch({type: "ADD_SUPPORT_RESPONSE", 
-    payload: { support: event.target.value }});
+  updateSupportResponse = (event) => {
+    console.log(event.target.value);
+    this.setState({
+      support: event.target.value
+    });
+    console.log('state:', this.state);
+  }
+
+  submitSupportResponse = () => {
+    this.props.dispatch({
+      type: 'ADD_SUPPORT_RESPONSE',
+      payload: this.state
+    })
   }
 
   render() {
@@ -17,14 +28,10 @@ class DailySupport extends Component {
       <>
         <h4>How well are you being supported?</h4>
         <div>
-          <select name="rating-select" onChange={this.props.submitResponse}>
-            <option value="SelectRating">Select Rating</option>
-            <option value="5">5</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1</option>
-          </select>
+          <input id="rating-select" onChange={this.updateSupportResponse} />
+          <br />
+          <br />
+          <button onClick={this.submitSupportResponse}>Add Response</button>
         </div>
         <br />
         <br />
@@ -34,4 +41,8 @@ class DailySupport extends Component {
   }
 }
 
-export default DailySupport;
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState
+});
+
+export default connect(putReduxStateOnProps)(DailySupport);

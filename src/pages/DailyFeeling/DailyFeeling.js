@@ -20,9 +20,6 @@ class DailyFeeling extends Component {
       this.props.dispatch({
         type: 'ADD_FEELING_RESPONSE',
         payload: this.state
-      });
-      this.setState({
-        feeling: ''
       })
     }
 

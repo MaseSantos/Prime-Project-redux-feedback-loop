@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SupportedButton from "../../components/buttons/SupportedButton/SupportedButton";
 
 class DailyUnderstanding extends Component {
@@ -7,19 +8,30 @@ class DailyUnderstanding extends Component {
     understanding: ""
   }
 
+  updateUnderstandingResponse = (event) => {
+    console.log(event.target.value);
+    this.setState({
+      understanding: event.target.value
+    });
+    console.log('state:', this.state);
+  }
+
+  submitUnderstandingResponse = () => {
+    this.props.dispatch({
+      type: 'ADD_UNDERSTANDING_RESPONSE',
+      payload: this.state
+    })
+  }
+
   render() {
     return (
       <>
         <h4>How well are you understanding the content?</h4>
         <div>
-          <select name="rating-select" onChange={this.props.submitResponse}>
-            <option value="SelectRating">Select Rating</option>
-            <option value="5">5</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1</option>
-          </select>
+          <input id="rating-select" onChange={this.updateUnderstandingResponse} />
+          <br />
+          <br />
+          <button onClick={this.submitUnderstandingResponse}>Add Response</button>
         </div>
         <br />
         <br />
@@ -29,4 +41,11 @@ class DailyUnderstanding extends Component {
   }
 }
 
-export default DailyUnderstanding;
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState
+});
+
+export default connect(putReduxStateOnProps)(DailyUnderstanding);
+
+
+

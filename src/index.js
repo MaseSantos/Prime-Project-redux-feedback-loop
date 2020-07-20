@@ -16,6 +16,30 @@ const feelingResponse = (state = [], action) => {
     return state;
 };
 
+const understandingResponse = (state = [], action) => {
+  if (action.type === "ADD_UNDERSTANDING_RESPONSE") {
+    console.log("Info:", state, action.type, action.payload);
+    return action.payload;
+  }
+  return state;
+};
+
+const supportResponse = (state = [], action) => {
+  if (action.type === "ADD_SUPPORT_RESPONSE") {
+    console.log("Info:", state, action.type, action.payload);
+    return action.payload;
+  }
+  return state;
+};
+
+const commentsResponse = (state = [], action) => {
+  if (action.type === "ADD_COMMENTS_RESPONSE") {
+    console.log("Info:", state, action.type, action.payload);
+    return action.payload;
+  }
+  return state;
+};
+
 // const responseList = (state = [], action) => {
 //   if (action.type === "SET_ALL_RESPONSES") {
 //     return action.payload;
@@ -26,6 +50,8 @@ const feelingResponse = (state = [], action) => {
 const storeInstance = createStore(
   combineReducers({
     feelingResponse,
+    understandingResponse,
+    supportResponse,
     // responseList,
   }),
   applyMiddleware(logger)
