@@ -3,13 +3,18 @@ import UnderstandingButton from "../../components/buttons/UnderstandingButton/Un
 import SelectTag from "../../components/SelectTag/SelectTag";
 
 class DailyFeeling extends Component {
+ 
+    state = {
+     question: "feeling"
+    }
+    
     render() {
         return (
-            <>
-                <h4>How are you feeling today?</h4>
-                <SelectTag/>
-                <UnderstandingButton/>
-            </>
+          <>
+            <h4>How are you feeling today?</h4>
+            <SelectTag question={this.state.question}/>
+            <UnderstandingButton />
+          </>
         );
     }
 }

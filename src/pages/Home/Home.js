@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <p>Fill out your feedback for the day!</p>
+        <h4>Fill out your feedback for the day!</h4>
         <FeelingButton />
       </div>
     );
