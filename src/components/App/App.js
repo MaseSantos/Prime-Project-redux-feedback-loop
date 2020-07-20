@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 
 import { HashRouter as Router, Route } from "react-router-dom";
 import Header from "../Header/Header";
+
 import Home from "../../pages/Home/Home";
 import Feeling from "../../pages/DailyFeeling/DailyFeeling";
 import Understanding from "../../pages/DailyUnderstanding/DailyUnderstanding";
 import Support from "../../pages/DailySupport/DailySupport";
 import Comments from "../../pages/DailyComments/DailyComments";
+import ReviewFeedback from "../../pages/ReviewFeedback/ReviewFeedback";
+import SubmissionSuccessful from "../../pages/SubmissionSuccessful/SubmissionSuccessful";
 // import Admin from "../../pages/Admin/Admin";
 
 import './App.css';
@@ -47,6 +50,8 @@ class App extends Component {
             <Route exact path="/understanding" component={Understanding} />
             <Route exact path="/supported" component={Support} />
             <Route exact path="/comments" component={Comments} />
+            <Route exact path="/review" component={ReviewFeedback} />
+            <Route exact path="/success" component={SubmissionSuccessful} />
             {/* <Route exact path="/admins" component={Admin} /> */}
           </main>
         </Router>

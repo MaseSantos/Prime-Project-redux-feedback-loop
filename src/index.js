@@ -8,34 +8,59 @@ import './index.css';
 import App from './components/App/App';
 // import registerServiceWorker from './registerServiceWorker';
 
-const feelingResponse = (state = [], action) => {
+const reducerInitialState = {
+  feeling: "",
+  understanding: "",
+  support: "",
+  comments: ""
+}
+
+const feelingResponse = (state = reducerInitialState, action) => {
     if (action.type === "ADD_FEELING_RESPONSE") {
-        console.log("Info:", state, action.type, action.payload);
-        return action.payload;
+        console.log("Info:", action.payload);
+        state = {
+          feeling: action.payload
+        };
+      console.log('this is the state:', state);
     }
     return state;
 };
 
-const understandingResponse = (state = [], action) => {
+const understandingResponse = (state = reducerInitialState, action) => {
   if (action.type === "ADD_UNDERSTANDING_RESPONSE") {
-    console.log("Info:", state, action.type, action.payload);
-    return action.payload;
+    console.log("Info:", action.payload);
+    state = {
+      ...state.feeling,
+      understanding: action.payload
+    };
+    console.log('this is the state:', state);
   }
   return state;
 };
 
-const supportResponse = (state = [], action) => {
+const supportResponse = (state = reducerInitialState, action) => {
   if (action.type === "ADD_SUPPORT_RESPONSE") {
-    console.log("Info:", state, action.type, action.payload);
-    return action.payload;
+    console.log("Info:", action.payload);
+    state = {
+      ...state.feeling,
+      ...state.understanding,
+      support: action.payload
+    };
+    console.log('this is the state:', state);
   }
   return state;
 };
 
-const commentsResponse = (state = [], action) => {
+const commentsResponse = (state = reducerInitialState, action) => {
   if (action.type === "ADD_COMMENTS_RESPONSE") {
-    console.log("Info:", state, action.type, action.payload);
-    return action.payload;
+    console.log("Info:", action.payload);
+    state = {
+      ...state.feeling,
+      ...state.understanding,
+      ...state.support,
+      comments: action.payload
+    };
+    console.log('this is the state:', state);
   }
   return state;
 };
@@ -52,6 +77,7 @@ const storeInstance = createStore(
     feelingResponse,
     understandingResponse,
     supportResponse,
+    commentsResponse
     // responseList,
   }),
   applyMiddleware(logger)

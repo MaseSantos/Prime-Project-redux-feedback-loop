@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReviewFeedback from '../../components/buttons/ReviewFeedbackButton/ReviewFeedbackButton';
+
 
 class DailyComments extends Component {
 
@@ -34,6 +36,7 @@ class DailyComments extends Component {
             </div>
             <br />
             <br />
+            <ReviewFeedback/>
           </>
         );
     }
