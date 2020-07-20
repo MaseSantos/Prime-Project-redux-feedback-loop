@@ -12,9 +12,11 @@ import Comments from "../../pages/DailyComments/DailyComments";
 import './App.css';
 
 class App extends Component {
+
+
   render() {
     return (
-      <>
+      <div className="App">
         <Header />
         <br />
         <Router>
@@ -26,7 +28,7 @@ class App extends Component {
             <Route exact path="/comments" component={Comments} />
           </main>
         </Router>
-      </>
+      </div>
     );
   }
 }

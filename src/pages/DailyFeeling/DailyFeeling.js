@@ -12,7 +12,9 @@ class DailyFeeling extends Component {
         return (
           <>
             <h4>How are you feeling today?</h4>
-            <SelectTag question={this.state.question}/>
+            <SelectTag question={this.state.question} />
+            <br />
+            <br />
             <UnderstandingButton />
           </>
         );

@@ -13,6 +13,8 @@ class DailyUnderstanding extends Component {
       <>
         <h4>How well are you understanding the content?</h4>
         <SelectTag question={this.state.question} />
+        <br />
+        <br />
         <SupportedButton />
       </>
     );

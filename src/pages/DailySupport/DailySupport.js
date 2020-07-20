@@ -13,6 +13,8 @@ class DailySupport extends Component {
       <>
         <h4>How well are you being supported?</h4>
         <SelectTag question={this.state.question} />
+        <br />
+        <br />
         <CommentsButton />
       </>
     );
