@@ -1,4 +1,17 @@
 .App{
     text-align: center;
+}
+
+.Header{
+        background-color: aquamarine;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;;
+}
+
+button{
+    padding: 10px;
+    border-width: 0px;
     background-color: aquamarine;
+    font-weight: 700;
 }
