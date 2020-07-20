@@ -3,16 +3,22 @@ import CommentsButton from '../../components/buttons/CommentsButton/CommentsButt
 import SelectTag from "../../components/SelectTag/SelectTag";
 
 class DailySupport extends Component {
-
   state = {
-    question: "support",
+    response: {
+      support: ""
+    },
   };
+
+  submitResponse = (event, propertyName) => {
+    this.props.dispatch({type: "ADD_SUPPORT_RESPONSE", 
+    payload: { support: event.target.value }});
+  }
 
   render() {
     return (
       <>
         <h4>How well are you being supported?</h4>
-        <SelectTag question={this.state.question} />
+        <SelectTag submitResponse={this.submitResponse}/>
         <br />
         <br />
         <CommentsButton />
